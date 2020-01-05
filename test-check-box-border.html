@@ -1,0 +1,55 @@
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <style type="text/css">
+    
+    .box {
+      /*background: red;*/
+      display: inline-block;
+      position: relative;
+      /*width: 10px;*/
+      /*height: 100vh;*/
+    }
+
+    input[type="radio"]:checked {
+  box-shadow: 0 0 0 3px orange;
+  border-color: black;
+}
+
+/*        input[type=radio]:checked:before {
+            border-radius: inherit;
+            border-width: 1px;
+            border-color: black;
+            border-style: solid;
+            content: '';
+            display: block;
+        }*/
+.single-option-selector {
+	/*display: none;*/
+}
+.color-swatch {
+	border: none!important;
+}
+
+input:checked + .custom-control-label::before {
+  box-shadow:none !important;
+}
+
+  </style>
+<body>
+  <div class="box">
+		<li class="product__color " title="(Shiny Silver - Limited Edition) Silver">
+                  <input id="4260868554834-color-swatch-8" class="single-option-selector" name="single-option-selector-0" data-option-index="option1" type="radio" value="(Shiny Silver - Limited Edition) Silver" style="border-color: green;">
+                  <label tabindex="0" class="color-swatch " for="4260868554834-color-swatch-8" style="background-color: red; margin-left: 100px;">fdsfsf</label>
+                  <div class="product__color_name shop-text-color">
+                    (Shiny Silver - Limited Edition) Silver
+                  </div>
+                  <div class="product__color_mask  product__color_mask_white  ">
+                  </div>
+                </li>
+  </div>
+</body>
+
+
+</html>

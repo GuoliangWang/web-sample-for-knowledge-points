@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div>
+        <div></div>
+        <div>
+            <div id="div-2"></div>
+        </div>
+    </div>
+    <script>
+    function xpathOf(node, id, xpath) {
+        if(node.id === id) {
+            return xpath
+        }
+        if(node.childNodes.length === 0) {
+            return null
+        }
+        let childNodeArray = [].slice.call(node.childNodes)
+        let nodeList = childNodeArray.filter(item => {
+            return item.nodeType === 1
+        })
+        for(let i = 0; i < nodeList.length; i++) {
+            let result = xpathOf(nodeList[i], id, `${xpath}>${nodeList[i].tagName.toLowerCase()}[${i}]`)
+            if(result) {
+                return result
+            }
+        }
+        return null
+    }
+
+    console.log(xpathOf(document.body, 'div-2', 'body'))
+
+    </script>
+</body>
+</html>

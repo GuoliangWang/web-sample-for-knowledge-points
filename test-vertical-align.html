@@ -1,0 +1,60 @@
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  </head>
+  <style type="text/css">
+    
+    
+    .box { 
+      background: red;
+      position: relative;
+      width: 1200px;
+      height: 600px;
+      line-height: 600px;
+    }
+
+    .inner {
+      background: pink;
+      width: 1000px;
+    }
+
+    /* span 的行内框高度和line-height相同  所以 vertical-align: top/bottom 没有任何效果 */
+    .span1 {
+      vertical-align: text-bottom; 
+      background: blue;
+    }
+    span {
+      vertical-align: top; 
+      background: black;
+    }
+    
+    img {
+      vertical-align: bottom;
+    }
+
+    .inline-block {
+      display: inline-block;
+      width: 40px;
+      height: 100px;
+      background: green;
+      vertical-align: bottom;
+    }
+      
+  
+
+  </style>
+<body>
+  <!-- <div class="header">
+  </div> -->
+  <div class="box">
+    <div class="inner">
+     aaaa <span class="span1">ddddd</span> <img src="https://www.ndnapps.com/ndnapps/storelocator/images/base/store-1574068305.jpg"><div style="display: inline-block;background: yellow; "> <span>fffff</span> </div> <div class="inline-block"></div>
+    </div>
+  </div>
+  
+
+</body>
+
+
+</html>

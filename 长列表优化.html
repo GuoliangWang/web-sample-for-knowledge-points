@@ -1,0 +1,69 @@
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+<body>
+  <div id='app'>
+    
+    <table>
+      <tr>
+        <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th>
+      </tr>
+      <tr v-for="item in list">
+        <td> <input type="text" value="1"> </td> <td> <input type="text" value="2"> </td> 
+        <td> <input type="text" value="3"> </td> <td> <input type="text" value="4"> </td>
+        <td> <input type="text" value="5"> </td> <td> <input type="text" value="6"> </td>
+      </tr>
+    </table>
+
+    <p v-for="item in list"> 
+      <input type="checkbox"/>
+      {{item.id}}--{{item.name}}
+    </p>
+
+    <p v-for="item in list"> 
+      <input type="checkbox"/>
+      {{item.id}}--{{item.name}}
+    </p>
+
+    <p v-for="item in list"> 
+      <input type="checkbox"/>
+      {{item.id}}--{{item.name}}
+    </p>
+
+
+  </div>
+</body>
+<!-- <script src="vue.js"></script> -->
+<script src="vue.min.js"></script>
+
+<script>
+var list = []
+    // :key="item.id"
+  var vm = new Vue({
+    el:'#app',
+    data:{
+      id:"",
+      name:"",
+      list:[
+        {id: 1, name: '222', col3: '3', col3: '4', col3: '5', col3: '6' }
+      ],
+    },
+    created() {
+      // 内存会激增， 应该控制 data.list 的长度，然后dom分三块， 中间显示实际的listItem， 上边一块上面的占位块（下拉时候显示loading），下边一块占位块（上拉显示loading）
+      // 动态改变占位块的高度
+      for(let i = 0; i < 10000; i++)
+        this.list.push({id: 1, name: '222', col3: '3', col3: '4', col3: '5', col3: '6' })
+    },
+    methods:{
+      add(){
+        this.list.unshift({id:this.id,name:this.name});
+      }
+    }
+  });
+
+  function hhhh() {
+        console.log(111)
+      }
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试BFC相关</title>
+    <style>
+        .box {
+            /* width: 100%; */
+            background: red;
+            /* writing-mode: tb-rl; */
+            padding-left: 100px;
+            /* position: absolute; */
+            position: relative;
+            border: 5px solid transparent;
+        }
+        .box-1 {
+            width: 100px;
+            height: 100px;
+            background: green;
+            /* margin-left: 100px; */
+            /* overflow: scroll; */
+            /* float: left; */
+            /* margin-bottom: 100px; */
+            /* margin-left: 100px; */
+            /* left: 200px; */
+            /* top: 200px; */
+            position: relative;
+            float: left;
+        }
+        .box-2 {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            /* margin-right: 100px; */
+            overflow: hidden;
+            /* display: inline-block; */
+            /* margin-top: 100px; */
+            position: relative;
+            float: right;
+        }
+        .box-3 {
+            display:table-cell;
+            width:9000px;/*宽度大到屏幕宽度即可*/
+            /*hack手段，针对IE6、7*/
+            *display:inline-block;
+            *width:auto;
+            height:100px;
+            background:pink;
+        }
+        /* body {
+            writing-mode: tb-rl;
+        } */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- <div style="overflow: hidden"> -->
+        <div class="box-1"></div>
+        <div class="box-2"></div>
+        <div class="box-3"></div>
+    </div>
+    <script>
+    
+    // "use strict";
+    // function f() {
+    //     console.log('严格模式下this',this)
+    // }
+    // f()
+        
+    </script>
+</body>
+</html>

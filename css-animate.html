@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <title>Tween.js / Black and Red</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="animate.min.css">
+
+    <style>
+      
+      .big-box {
+        margin-left: 200px;
+        margin-top: -800px;
+        width: 1000px;
+        height: 1000px;
+        /*background: green;*/
+        padding-left: 475px;
+        padding-top: 900px;
+        box-sizing: border-box;
+      }
+
+      .moti {
+        width: 50px;
+        height: 200px;
+        background: red;
+        animation-duration: 5s;
+        /*animation-delay: 5s;*/
+        /*animation-iteration-count: infinite;*/
+      }
+
+      .moti-animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+      }
+
+      @keyframes rotate {
+          0% {
+              -webkit-transform: none;
+              -ms-transform: none;
+              transform: none
+          }
+
+          100% {
+              -webkit-transform: rotate3d(0,0,1,-25deg);
+              -ms-transform: rotate3d(0,0,1,-25deg);
+              transform: rotate3d(0,0,1,-25deg)
+          }
+      }
+
+      .rotate {
+          -webkit-animation-name: rotate;
+          animation-name: rotate
+      }
+      @keyframes rotate-yangan {
+          0% {
+              -webkit-transform: none;
+              -ms-transform: none;
+              transform: none
+          }
+
+          100% {
+              -webkit-transform: rotate3d(0,0,1,-65deg);
+              -ms-transform: rotate3d(0,0,1,-65deg);
+              transform: rotate3d(0,0,1,-65deg)
+          }
+      }
+
+      .rotate-yangan {
+          -webkit-animation-name: rotate-yangan;
+          animation-name: rotate-yangan;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <div style="height: 400px; overflow: hidden;">
+      <div class="big-box moti-animated rotate">
+        <div class="moti moti-animated rotate-yangan">
+        </div>
+      </div>
+    </div>
+
+    
+    
+  </body>
+</html>

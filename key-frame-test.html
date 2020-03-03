@@ -1,0 +1,60 @@
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <style type="text/css">
+  
+
+    @keyframes frames {
+       0% {
+        transform: translateY(100px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    } 
+
+    .parent {
+      background: green;
+    }  
+    .box {
+      background: red;
+      width: 100px;
+      height: 200px;
+      transform: translateY(-100px);
+    }
+
+    /*不生效： @keyframes 前不能加非空字符 */
+   /*.box @keyframes frames {*/
+
+    /*  覆盖前面的frames */
+    @keyframes frames {*/
+       0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(100px);
+      }
+    } 
+
+    .animated {
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        animation-name: frames; 
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="parent" onclick="console.log('parent clicked')">
+	  <div class="box animated" id='box' onclick="console.log('clicked')">
+	    
+	  </div>
+  </div>
+
+</body>
+
+
+</html>
